@@ -29,11 +29,6 @@ namespace wp_eduarte
             this.wvBrowser.Source = new Uri("https://go-selfservice.educus.nl/app/login/Gilde%20Opleidingen?2");
             this.wvBrowser.Focus(FocusState);
             // Kijken of de gebruiker is ingelogd
-            pvt_results.Visibility = Visibility.Collapsed;
-            pvt_internship.Visibility = Visibility.Collapsed;
-            pvt_information.Visibility = Visibility.Collapsed;
-            pvt_calendar.Visibility = Visibility.Collapsed;
-            pvt_attending.Visibility = Visibility.Collapsed;
             logincheck();
             HardwareButtons.BackPressed += HardwareButtons_BackPressed;
         }
