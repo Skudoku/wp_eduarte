@@ -1,0 +1,82 @@
+﻿<Page
+    x:Class="wp_eduarte.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:wp_eduarte"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <!-- Jow zie je dit? -->
+        <Pivot x:Name="pvt_master" Title="Eduarte">
+            <PivotItem x:Name="pvt_welkom" Header="Welkom">
+                <Grid>
+                    <Grid x:Name="grd_signin">
+                        <TextBlock Text="Inloggen" Margin="15" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+                        <!-- Inlog form -->
+                        <TextBlock Text="Gebruikersnaam:" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,50,5,0"/>
+                        <TextBox x:Name="tb_main_un" Margin="5,75,5,5"/>
+                        <TextBlock Text="Wachtwoord:" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,125,15,0"/>
+                        <PasswordBox x:Name="tb_main_pw" Margin="5,150,5,5"/>
+                        <Button x:ConnectionId='6' x:Name="btn_main_signin" Content="Inloggen" VerticalAlignment="Top" Margin="5,200,5,5" HorizontalAlignment="Stretch"                              />
+                        <TextBlock x:Name="lbl_main_error" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,255,15,15"/>
+                    </Grid>
+                    <Grid x:Name="grd_main" Visibility="Collapsed">
+                        <TextBlock Text="Welkom (terug)"/>
+                        <!-- NAAM??? -->
+                    </Grid>
+                </Grid>
+            </PivotItem>
+            <PivotItem x:Name="pvt_login" Header="Welkom gebruiker!" Margin="0,35,0,36">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="121*"/>
+                        <ColumnDefinition Width="7*"/>
+                    </Grid.ColumnDefinitions>
+                    <WebView x:Name="wvBrowser" Height="410" Margin="5" Width="353"/>
+                </Grid>
+            </PivotItem>
+            <PivotItem x:Name="pvt_calendar" Header="Calendar">
+                <Grid Margin="0,0,0,-0.5">
+                    <Button x:ConnectionId='5' x:Name="btnGetCalendar" Content="Haal kalender op" HorizontalAlignment="Left" Margin="0,-34,0,0" VerticalAlignment="Top"                             />
+                    <WebView x:Name="wvCalendar" HorizontalAlignment="Left" Height="424" Margin="10,19,0,0" VerticalAlignment="Top" Width="326" RenderTransformOrigin="0.15,0.455"/>
+                </Grid>
+            </PivotItem>
+            <PivotItem x:Name="pvt_results" Header="Resultaten">
+                <Grid>
+                    <WebView x:Name="wvResults" HorizontalAlignment="Left" Height="398" Margin="10,93,0,0" VerticalAlignment="Top" Width="364"/>
+                    <Button x:ConnectionId='4' x:Name="btnResults" Content="Haal resultaten op" HorizontalAlignment="Left" Margin="10,1,0,0" VerticalAlignment="Top"                         />
+                </Grid>
+            </PivotItem>
+            <PivotItem x:Name="pvt_internship" Header="Stage">
+                <Grid>
+                    <WebView  x:Name="wvInternship" Height="368" Margin="10,77,0,0" VerticalAlignment="Top" Width="304"/>
+                    <Button x:ConnectionId='3' x:Name="btnInternship" Content="Bekijk Stages" HorizontalAlignment="Left" Margin="10,1,0,0" VerticalAlignment="Top"                            />
+                </Grid>
+            </PivotItem>
+            <PivotItem x:Name="pvt_attending" Header="Aanwezigheid">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="137*"/>
+                        <ColumnDefinition Width="209*"/>
+                    </Grid.ColumnDefinitions>
+                    <WebView x:Name="wvAttending" HorizontalAlignment="Left" Height="415" Margin="10,54,0,0" VerticalAlignment="Top" Width="326" Grid.ColumnSpan="2"/>
+                    <Button x:ConnectionId='2' x:Name="btnAanwezig" Content="Bekijk Aanwezigheid" HorizontalAlignment="Left" Margin="10,1,0,0" VerticalAlignment="Top"                           Grid.ColumnSpan="2" Width="209"/>
+
+                </Grid>
+            </PivotItem>
+            <PivotItem x:Name="pvt_information" Header="Mijn Gegevens">
+                <Grid>
+                    <Button x:ConnectionId='1' x:Name="btnInformation" Content="Haal gegevens op" HorizontalAlignment="Left" Margin="10,1,0,0" VerticalAlignment="Top"                             />
+                    <WebView x:Name="wvInformation" Height="415" Margin="10,54,0,0" VerticalAlignment="Top" Width="326"/>
+
+                </Grid>
+            </PivotItem>
+
+        </Pivot>
+    </Grid>
+</Page>
+
